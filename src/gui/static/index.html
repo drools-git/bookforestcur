@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookForest2</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+
+  <!-- Sigma.js v3 + Graphology via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/graphology@0.25.4/dist/graphology.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/graphology-layout-forceatlas2@0.10.1/dist/graphology-layout-forceatlas2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sigma@3.0.0/build/sigma.min.js"></script>
+</head>
+<body>
+  <!-- ── Top bar ─────────────────────────────────────────── -->
+  <header id="topbar">
+    <div id="logo">🌲 BookForest2</div>
+
+    <div id="view-toggle">
+      <button class="view-btn active" data-view="galaxy">Galaxy</button>
+      <button class="view-btn" data-view="tree">Tree</button>
+      <button class="view-btn" data-view="focus">Focus</button>
+    </div>
+
+    <div id="search-wrap">
+      <input id="search-input" type="text" placeholder="Search bookmarks…" autocomplete="off" />
+      <div id="search-results"></div>
+    </div>
+
+    <div id="stats-badge">
+      <span id="stat-active">–</span> bookmarks &nbsp;·&nbsp;
+      <span id="stat-cats">–</span> categories
+    </div>
+  </header>
+
+  <!-- ── Breadcrumb (Focus view) ──────────────────────────── -->
+  <div id="breadcrumb" class="hidden"></div>
+
+  <!-- ── Graph container ─────────────────────────────────── -->
+  <div id="sigma-container"></div>
+
+  <!-- ── Sidebar ─────────────────────────────────────────── -->
+  <aside id="sidebar" class="hidden">
+    <button id="sidebar-close">✕</button>
+    <div id="sidebar-content"></div>
+  </aside>
+
+  <!-- ── Loading overlay ──────────────────────────────────── -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p id="loading-msg">Loading graph…</p>
+  </div>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/sidebar.js"></script>
+  <script src="/static/js/graph-galaxy.js"></script>
+  <script src="/static/js/graph-tree.js"></script>
+  <script src="/static/js/graph-focus.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+# Data directories — never commit these
+data/chroma_db/
+data/cache/
+data/output/
+data/input/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Conda env (if created inside project)
+envs/
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temp / check scripts (dev only)
+check_env.py
+check_env.bat

@@ -1,0 +1,25 @@
+# Core
+beautifulsoup4>=4.12
+lxml>=5.0
+pydantic>=2.6
+pydantic-settings>=2.2
+pyyaml>=6.0
+requests>=2.31
+tqdm>=4.66
+
+# Ollama
+ollama>=0.3
+
+# Vector DB
+chromadb>=0.5
+
+# Clustering / ML
+hdbscan>=0.8.38
+umap-learn>=0.5
+scikit-learn>=1.4
+numpy>=1.26
+
+# GUI (optional — comment out if not using the web interface)
+fastapi>=0.111
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9

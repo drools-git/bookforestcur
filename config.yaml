@@ -1,0 +1,59 @@
+ollama:
+  base_url: "http://localhost:11434"
+  embedding_model: "nomic-embed-text"
+  llm_model: "llama3.2"
+
+chromadb:
+  persist_directory: "./data/chroma_db"
+  collection_name: "bookmarks"
+
+processing:
+  scrape_page: false
+  scrape_timeout: 10
+  scrape_max_chars: 2000
+  batch_size: 32
+
+# Level-1 root buckets — always present, never deleted
+root_buckets:
+  - AI
+  - DEV
+  - FINANCE
+  - FOOD
+  - GPS
+  - LEARNING
+  - MISC
+
+clustering:
+  # "hdbscan" (recommended) or "kmeans"
+  algorithm: "hdbscan"
+  umap_n_components: 10
+  umap_n_neighbors: 15
+  umap_min_dist: 0.1
+  hdbscan_min_cluster_size: 10
+  hdbscan_min_samples: 5
+  kmeans_k_factor: 50   # k = max(2, n // k_factor)
+
+validation:
+  root_assignment_threshold: 0.75
+  min_cluster_size: 10
+  min_confidence: 0.75
+  merge_threshold: 0.85
+  duplicate_semantic_threshold: 0.95
+  max_categories: 50
+
+cache:
+  directory: "./data/cache"
+  enabled: true
+
+output:
+  directory: "./data/output"
+  # Choose which formats to generate: html, json, report
+  formats:
+    - html
+    - json
+    - report
+
+gui:
+  enabled: false
+  host: "localhost"
+  port: 8080
